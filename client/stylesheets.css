@@ -1,0 +1,30 @@
+/* CSS declarations go here */
+body {
+  background-image: linear-gradient(to bottom, #5EA5FF, #BED1FF 100%);
+  background-attachment: fixed;
+}
+
+nav {
+	padding: 30px 20px;
+}
+
+nav a {
+	font: 30px Helvetica;
+	font-weight: bold;
+	color: #EDEDED;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.layout-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.content-container {
+	padding: 10px 30px;
+}

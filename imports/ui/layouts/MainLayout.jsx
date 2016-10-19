@@ -5,7 +5,9 @@ export default function MainLayout({ content }) {
 	return (
 		<div className="layout-container">
 			<Header />
-			{content}
+			<div className="content-container">
+				{content}
+			</div>			
 		</div>
 	);
 }

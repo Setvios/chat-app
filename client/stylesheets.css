@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 body {
-  background-image: linear-gradient(to bottom, #5EA5FF, #BED1FF 100%);
-  background-attachment: fixed;
+	background-image: linear-gradient(to bottom, #5EA5FF, #BED1FF 100%);
+	background-attachment: fixed;
 }
 
 nav {
@@ -9,7 +9,7 @@ nav {
 }
 
 nav a {
-	font: 30px Helvetica;
+	font: 35px Helvetica;
 	font-weight: bold;
 	color: #EDEDED;
 	text-decoration: none;
@@ -21,10 +21,34 @@ nav a:hover {
 }
 
 .layout-container {
-  max-width: 800px;
-  margin: 0 auto;
+	max-width: 700px;
+	margin: 0 auto;
 }
 
 .content-container {
-	padding: 10px 30px;
+	padding: 20px 30px;
+}
+
+.messages-container {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.message-container {
+	font: 16px Helvetica;
+	color: #3466ff;
+	background: #84D1FF;
+	margin: 5px 0;
+	padding: 10px;
+	border-radius: 4px;
+}
+
+.text-container {
+	padding-left: 100px;
+}
+
+.input-form {
+	border-bottom: 1px solid #EDEDED;
+	margin: 30px 0;
+	padding: 0 10px;
 }

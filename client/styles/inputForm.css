@@ -1,0 +1,52 @@
+.input-form-container input {
+	font: 16px Helvetica;
+	color: #EDEDED;
+	box-sizing: border-box;
+	padding: 10px 0;
+	background: transparent;
+	border: none;
+	width: 100%;
+	padding-right: 80px;
+	font-size: 1em;
+}
+
+.input-form-container input:focus{
+	outline: 0;
+}
+
+.input-form-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	font: 20px Helvetica;
+	color: #EDEDED;
+
+}
+.input-form-container input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font: 20px Helvetica;
+	color: #EDEDED;
+	opacity:  1;
+}
+.input-form-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font: 20px Helvetica;
+	color: #EDEDED;
+	opacity:  1;
+}
+.input-form-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font: 20px Helvetica;
+	color: #EDEDED;
+	opacity:  1;
+}
+
+.input-form-container input:focus::-webkit-input-placeholder { 
+	color:transparent;
+}
+
+.input-form-container input:focus:-moz-placeholder {
+	color:transparent;
+} /* FF 4-18 */
+
+.input-form-container input:focus::-moz-placeholder {
+	color:transparent;
+} /* FF 19+ */
+
+.input-form-container input:focus:-ms-input-placeholder {
+	color:transparent;
+} /* IE 10+ */

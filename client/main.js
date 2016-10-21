@@ -6,6 +6,9 @@ import MainLayout from '../imports/ui/layouts/MainLayout';
 import { Header } from '../imports/ui/components/App';
 import App from '../imports/ui/components/App';
 
+import '../imports/startup/accounts-config';
+
+
 FlowRouter.route('/', {
 	action() {
 		mount(MainLayout, {

@@ -22,7 +22,7 @@ export default class InputForm extends Component {
 					<input
 						type="text"
 						ref="textInput"
-						placeholder="Type your message"
+						placeholder="Type your message.."
 					/>
 				</form>
 			</div>

@@ -16,8 +16,10 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<div className="messages-container">				
-						{this.renderMessages()}
+				<div className="messages-container-wrapper">
+					<div className="messages-container">				
+							{this.renderMessages()}
+					</div>
 				</div>
 				<InputForm />
 			</div>
@@ -35,5 +37,6 @@ export default createContainer(() => {
 
 	return {
 		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
+		currentUser: Meteor.user(),
 	};
 }, App);

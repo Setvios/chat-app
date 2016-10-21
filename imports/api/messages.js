@@ -8,9 +8,9 @@ Meteor.methods({
 	newMessage(text){
 		check(text, String);
 
-		//if (!this.userId) {
-		//	throw new Meteor.Error('not-authorized');
-		//}
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
 
 		Messages.insert({
 			text,

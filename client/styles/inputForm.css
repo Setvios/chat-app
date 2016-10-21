@@ -1,6 +1,12 @@
+.input-form {
+	border-bottom: 1px solid #FFFFFF;
+	margin: 30px 0;
+	padding: 0 10px;
+}
+
 .input-form-container input {
 	font: 16px Helvetica;
-	color: #EDEDED;
+	color: #FFFFFF;
 	box-sizing: border-box;
 	padding: 10px 0;
 	background: transparent;
@@ -16,22 +22,22 @@
 
 .input-form-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	font: 20px Helvetica;
-	color: #EDEDED;
+	color: #FFFFFF;
 
 }
 .input-form-container input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 	font: 20px Helvetica;
-	color: #EDEDED;
+	color: #FFFFFF;
 	opacity:  1;
 }
 .input-form-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
 	font: 20px Helvetica;
-	color: #EDEDED;
+	color: #FFFFFF;
 	opacity:  1;
 }
 .input-form-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
 	font: 20px Helvetica;
-	color: #EDEDED;
+	color:#FFFFFF;
 	opacity:  1;
 }
 

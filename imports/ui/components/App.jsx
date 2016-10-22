@@ -29,6 +29,7 @@ class App extends Component {
 
 App.propTypes = {
 	messages: PropTypes.array,
+	currentUser: PropTypes.object,
 };
 
 export default createContainer(() => {

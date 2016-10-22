@@ -10,7 +10,7 @@ body {
 }
 
 .content-container {
-	padding: 0 30px;
+	padding: 20px 30px;
 }
 
 .message-container {
@@ -26,4 +26,13 @@ body {
 	background: #84D1FF;
 	border-radius: 8px;
 	padding: 10px;
+}
+
+.landing {
+	font: 22px Helvetica;
+	font-weight: bold;
+	color: #3466ff;
+	text-align: center;
+
+	padding-top: 40px;
 }

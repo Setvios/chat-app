@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
 import AccountsUIWrapper from './AccountsUIWrapper';
 
-export class Header extends Component {
+class Header extends Component {	
 	render() {
+		const { isUser } = this.props;
+		console.log(isUser);
 		return (
 			<div className="header-container">
+				<a className="logo" href="/">Chat App</a>
 				<ul className="nav">
 					<li>
-						<a className="logo" href="/">Chat App</a>
-					</li>
-					<li>
-						<button className="editButton">Edit Profile</button>
+						{ isUser ? <a href='/profile' className="profile-redirect">Edit Profile</a> : '' }
 					</li>
 					<li>
 						<AccountsUIWrapper />
@@ -20,3 +22,14 @@ export class Header extends Component {
 		);
 	}
 }
+
+Header.propTypes = {
+	isUser: PropTypes.bool,
+}
+
+export default createContainer(() => {
+
+	return {
+		isUser: !!Meteor.user(),
+	 };	
+}, Header);

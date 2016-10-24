@@ -1,0 +1,19 @@
+.chat-container {
+	width: 93%;
+	padding: 10px 0;
+	margin: 0 auto;	
+}
+
+.chat-container-wrapper {
+	height: 400px;
+	overflow-x: hidden;
+}
+
+.chat-container-wrapper::-webkit-scrollbar {
+	width: 8px;
+}
+
+.chat-container-wrapper::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: #EDEDED;
+}

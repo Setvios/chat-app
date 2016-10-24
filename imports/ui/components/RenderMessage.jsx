@@ -3,11 +3,15 @@ import Meteor from 'meteor/meteor';
 
 export default class RenderMessage extends Component {
 	render() {
+		const { message } = this.props;
 		return (
 			<div className="message-container">
+				<div className="username-wrap">
+					{message.username}:				
+				</div>
 				<div className="text-container">
-					{this.props.message.text}
-				</div>					
+					{message.text}
+				</div>
 			</div>
 		);
 	}

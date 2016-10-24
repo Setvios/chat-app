@@ -13,21 +13,6 @@ body {
 	padding: 20px 30px;
 }
 
-.message-container {
-	overflow: hidden;
-	margin: 5px 0;	
-}
-
-.text-container {
-	float: right;
-	display: inline-block;
-	font: 15px Helvetica;
-	color: #3466ff;
-	background: #84D1FF;
-	border-radius: 8px;
-	padding: 10px;
-}
-
 .landing {
 	font: 22px Helvetica;
 	font-weight: bold;
@@ -35,4 +20,4 @@ body {
 	text-align: center;
 
 	padding-top: 40px;
-}
+}	

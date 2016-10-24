@@ -1,0 +1,25 @@
+.message-container {
+	overflow: hidden;
+	margin: 5px 0;	
+}
+
+.text-container {
+	font: 15px Helvetica;
+	color: #3466ff;
+	background: #84D1FF;
+	border-radius: 7px;
+	padding: 7px;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.username-wrap {
+	font: 12px sans-serif;
+	font-weight: bold;
+	float: left;
+	color: #004263;
+	border: 2px solid #84d1ff;
+	border-radius: 20px;
+	margin-right: 12px;
+	padding: 8px;
+}

@@ -16,9 +16,9 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				<div className="messages-container-wrapper">
-					<div className="messages-container">				
-							{this.renderMessages()}
+				<div className="chat-container-wrapper">
+					<div className="chat-container">				
+						{this.renderMessages()}
 					</div>
 				</div>
 				<InputForm />

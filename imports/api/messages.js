@@ -15,6 +15,7 @@ Meteor.methods({
 		Messages.insert({
 			text,
 			createdAt: new Date(),
+			username: Meteor.users.findOne(this.userId).username,
 		});
 	},
 });

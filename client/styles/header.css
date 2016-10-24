@@ -6,12 +6,6 @@
 	clear: both;
 }
 
-.nav {
-	float: right;
-	margin: 0;
-	padding: 0;
-}
-
 .logo {
 	font: 35px Helvetica;
 	font-weight: bold;
@@ -24,6 +18,12 @@
 .logo:hover {
 	color: #FFFFFF;
 	cursor: pointer;
+}
+
+.nav {
+	float: right;
+	margin: 0;
+	padding: 0;
 }
 
 .profile-redirect {

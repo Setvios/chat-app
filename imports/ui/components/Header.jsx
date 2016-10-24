@@ -6,7 +6,6 @@ import AccountsUIWrapper from './AccountsUIWrapper';
 class Header extends Component {	
 	render() {
 		const { isUser } = this.props;
-		console.log(isUser);
 		return (
 			<div className="header-container">
 				<a className="logo" href="/">Chat App</a>

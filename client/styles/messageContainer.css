@@ -3,23 +3,31 @@
 	margin: 5px 0;	
 }
 
-.text-container {
-	font: 15px Helvetica;
-	color: #3466ff;
-	background: #84D1FF;
-	border-radius: 7px;
-	padding: 7px;
-	display: table-cell;
-	vertical-align: top;
-}
-
 .username-wrap {
 	font: 12px sans-serif;
 	font-weight: bold;
 	float: left;
 	color: #004263;
-	border: 2px solid #84d1ff;
+	border: 1px solid #bdd1ff;
 	border-radius: 20px;
-	margin-right: 12px;
-	padding: 8px;
+	margin-right: -1px;
+	padding: 7px;
+}
+
+.text-container {
+	font: 15px Helvetica;
+	color: #0c49ff;
+	background: #bdd1ff;
+	border-radius: 20px;
+	padding: 6px 11px;
+	display: table-cell;
+	vertical-align: top;
+}
+
+.text-container p {
+	color: #5987f7;
+	font: 10px Helvetica;
+	margin: 2px 0 0 0;
+	text-align: right;
+	padding-right: 10px;
 }

@@ -8,15 +8,27 @@ import InputForm from './InputForm';
 class App extends Component {
 
 	renderMessages() {
-		return this.props.messages.map( message => (
-			<RenderMessage key={message._id} message={message} />
+		console.log(this.props.messages)
+		const userLocation = this.props.messages.filter( message => (
+			message.location === this.props.currentUser.location
+		));
+		console.log(userLocation);
+		return userLocation.map( message => (
+			<RenderMessage 
+				key={message._id} 
+				message={message} 
+			/>
 		));
 	}
 
 	render() {
+		const {currentUser} = this.props;
+		if (!currentUser) return null;
+		if (!currentUser.location) return null;
 		return (
 			<div>
 				<div className="chat-container-wrapper">
+					<h3>current location: {currentUser.location}</h3>
 					<div className="chat-container">				
 						{this.renderMessages()}
 					</div>
@@ -35,9 +47,10 @@ App.propTypes = {
 export default createContainer(() => {
 
 	Meteor.subscribe('messages');
+	Meteor.subscribe('userData');
 
 	return {
 		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
 		currentUser: Meteor.user(),
 	};
-}, App);
+}, App, );

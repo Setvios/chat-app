@@ -4,6 +4,17 @@ body {
 	background-attachment: fixed;
 }
 
+.chat-container-wrapper h3 {
+	font: 14px helvetica;
+	color: #00527b;;
+	text-align: center;
+	margin: 5px auto;
+	display: block;
+	width: 25%;
+	border-top: 1px solid #ededed;
+	padding: 10px 30px;
+}
+
 .layout-container {
 	max-width: 50%;
 	margin: 0 auto;

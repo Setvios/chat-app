@@ -1,0 +1,109 @@
+.profile-container {
+	width: 70%;
+	margin: 0 auto;
+	padding: 40px 30px;
+	border-radius: 6px;
+}
+
+.select-container {
+	margin-top: 14px;
+	text-align: center;
+}
+
+.profile-container input {
+	margin-bottom: 15px;
+}
+
+.profile-container h4 {
+	font: 14px Helvetica;
+	color: #004263;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.profile-container input {
+	font: 14px Helvetica;
+	color: #FFFFFF;
+	box-sizing: border-box;
+	padding: 10px 0;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #EDEDED;
+	width: 100%;
+	padding-left: 5px;
+	padding-right: 80px;
+	font-size: 1em;
+}
+
+.profile-container input:focus{
+	outline: 0;
+}
+
+.profile-container input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	font: 12px Helvetica;
+	color: #FFFFFF;
+
+}
+.profile-container input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	font: 12px Helvetica;
+	color: #FFFFFF;
+	opacity:  1;
+}
+.profile-container input::-moz-placeholder { /* Mozilla Firefox 19+ */
+	font: 12px Helvetica;
+	color: #FFFFFF;
+	opacity:  1;
+}
+.profile-container input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	font: 12px Helvetica;
+	color:#FFFFFF;
+	opacity:  1;
+}
+
+.profile-container input:focus::-webkit-input-placeholder { 
+	color:transparent;
+}
+
+.profile-container input:focus:-moz-placeholder {
+	color:transparent;
+} /* FF 4-18 */
+
+.profile-container input:focus::-moz-placeholder {
+	color:transparent;
+} /* FF 19+ */
+
+.profile-container input:focus:-ms-input-placeholder {
+	color:transparent;
+} /* IE 10+ */
+
+.profile-container select {
+	width: 30%;
+	font: 12px Helvetica;
+	color: #0c49ff;
+	font-weight: bold;
+	margin: 10px 0;
+	background: transparent;
+	border: 1px solid #EDEDED;
+	border-radius: 2px;
+	padding: 5px;
+	outline: 0;
+}
+
+.profile-container button {
+	width: 100%;
+	background: #ededed;
+	border: none;
+	font: 14px Verdana;
+	color: #004263;
+	font-weight: bold;
+	border-radius: 2px;
+	margin-top: 14px;
+	padding: 10px;
+	outline: 0;
+	transition: all 0.3s;
+}
+
+.profile-container button:hover {
+	background: #FFFFFF;
+	cursor: pointer;
+}

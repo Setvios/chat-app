@@ -8,11 +8,9 @@ import InputForm from './InputForm';
 class App extends Component {
 
 	renderMessages() {
-		console.log(this.props.messages)
 		const userLocation = this.props.messages.filter( message => (
 			message.location === this.props.currentUser.location
 		));
-		console.log(userLocation);
 		return userLocation.map( message => (
 			<RenderMessage 
 				key={message._id} 
@@ -23,8 +21,12 @@ class App extends Component {
 
 	render() {
 		const {currentUser} = this.props;
-		if (!currentUser) return null;
-		if (!currentUser.location) return null;
+		if (!currentUser) {
+			return <p className="noUser">Please sign in and select location to start chatting</p>;
+		}			
+		if (!currentUser.location) {
+			return <p className="noUser">now, select location in your profile to start chatting</p>;
+		} 
 		return (
 			<div>
 				<div className="chat-container-wrapper">

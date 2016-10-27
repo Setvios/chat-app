@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import TextField from '../components/TextField'
@@ -25,7 +25,6 @@ class EditProfile extends Component {
 	render() {
 		const {currentUser} = this.props
 		if (!currentUser) return null;
-
 		return (
 			<div className="profile-container">
 				<form className="input-form" onSubmit={this.submitData.bind(this)} >
@@ -47,7 +46,11 @@ class EditProfile extends Component {
 					<br />
 					<div className="select-container">
 						<h4>Select chatting location</h4>
-						<select name="location" required>
+						<select name="location" 
+							value={currentUser.location} 
+							onChange={()=>{}} 
+							required
+						>
 							<option value="London">London</option>
 							<option value="Chicago">Chicago</option>
 							<option value="Boston">Boston</option>
@@ -61,6 +64,10 @@ class EditProfile extends Component {
 		);
 	}
 }
+
+EditProfile.propTypes = {
+	currentUser: PropTypes.object,
+};
 
 export default createContainer(() => {
 

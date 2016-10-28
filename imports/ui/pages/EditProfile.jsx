@@ -46,7 +46,8 @@ class EditProfile extends Component {
 					<br />
 					<div className="select-container">
 						<h4>Select chatting location</h4>
-						<select name="location" 
+						<select 
+							name="location" 
 							value={currentUser.location} 
 							onChange={()=>{}} 
 							required

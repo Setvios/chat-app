@@ -22,4 +22,21 @@ Meteor.methods({
 			}
 		)		
 	},
+
+	editUserLocation(location){
+		check(location, String);
+
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+
+		Meteor.users.update(
+			{ _id: this.userId }, 
+			{
+				$set: {
+					location: location
+				}
+			}
+		)		
+	},
 });

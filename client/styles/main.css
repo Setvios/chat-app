@@ -1,0 +1,84 @@
+/* CSS declarations go here */
+body {
+	background-image: linear-gradient(to bottom, #5EA5FF, #BED1FF 100%);
+	background-attachment: fixed;
+}
+
+.noUser {
+	background:  #bdd1ff;
+	font: 15px Helvetica;
+	color: #004263;
+	text-align: center;
+	padding: 10px;
+	border-radius: 5px; 
+}
+
+.select-location {
+	background: #bdd1ff;
+	font: 15px Helvetica;
+	color: #004263;
+	text-align: center;
+	padding: 20px 10px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.select-location p  {
+	margin: 0;
+	padding: 7px 0;
+}
+
+.select-location select {
+	width: 30%;
+	font: 12px Helvetica;
+	color: #0c49ff;
+	font-weight: bold;
+	margin: 10px 0;
+	background: transparent;
+	border: 1px solid #EDEDED;
+	border-radius: 2px;
+	padding: 5px;
+	outline: 0;
+}
+
+.select-location button {
+	width: 15%;
+	background: #ededed;
+	border: none;
+	font: 14px Verdana;
+	color: #004263;
+	font-weight: bold;
+	border-radius: 2px;
+	margin-top: 14px;
+	padding: 10px;
+	outline: 0;
+	transition: all 0.3s;
+}
+
+.select-location button:hover {
+	background: #FFFFFF;
+	cursor: pointer;
+}
+
+.chat-container-wrapper h3 {
+	font: 14px helvetica;
+	color: #00527b;;
+	text-align: center;	
+	display: block;
+	width: 25%;
+	border-top: 1px solid #ededed;
+	margin: 5px auto;
+	margin-bottom: 10px;
+	padding: 10px 30px;
+
+}
+
+.layout-container {
+	max-width: 50%;
+	margin: 0 auto;
+}
+
+.content-container {
+	padding: 20px 30px;
+}
+

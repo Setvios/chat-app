@@ -4,6 +4,7 @@
 	background: #2f63ff;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
 }
+
 .header-container:after {
 	clear: both;
 }
@@ -59,4 +60,8 @@
 
 #login-buttons:hover {
 	color: #FFFFFF;
+}
+
+.accounts-dialog {
+	background: #bdd1ff;
 }

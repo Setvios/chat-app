@@ -7,17 +7,14 @@ import InputForm from '../components/InputForm';
 import SelectField from '../components/SelectField';
 import {Messages} from '../../../imports/api/messages';
 
-class App extends Component {
+class Chat extends Component {
 
 	changeLocation(location) {
 		Meteor.call('editUserLocation', location);
 	}
 
 	renderMessages() {
-		const userLocation = this.props.messages.filter(message => (
-			message.location === this.props.currentUser.location
-		));
-		return userLocation.map(message => (
+		return this.props.messages.map(message => (
 			<RenderMessage 
 				key={message._id} 
 				message={message} 
@@ -26,25 +23,19 @@ class App extends Component {
 	}
 
 	render() {
-		const {currentUser} = this.props;
+		const { currentUser, isLoading } = this.props;
+		if (isLoading) {
+			return <p className="noUser">Loading...</p>;
+		}
 		if (!currentUser) {
 			return <p className="noUser">Please sign in and select location to start chatting</p>;
 		}
-
-		if (!currentUser.location) {
-			const optionsValue = [
-				"London",
-				"Chicago",
-				"Boston",
-				"Madrid",
-			]
+		if (!currentUser.location) {		
 			return (
 				<div className="select-location">
 					<p>Select chatting location</p>
 					<SelectField
 						name="location"
-						value={optionsValue[0]}
-						optionsValue={optionsValue}
 						onChange={this.changeLocation.bind(this)}
 					/>
 				</div>
@@ -67,18 +58,21 @@ class App extends Component {
 	}
 }
 
-App.propTypes = {
+Chat.propTypes = {
 	messages: PropTypes.array.isRequired,
 	currentUser: PropTypes.object,
 }; 
 
 export default createContainer(() => {
-
+	let isLoading = true;
 	Meteor.subscribe('messages');
-	Meteor.subscribe('userData');
-
+	if (Meteor.subscribe('userData').ready()) {
+		isLoading = false;
+	}
+	
 	return {
 		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
 		currentUser: Meteor.user(),
-	};
-}, App, );
+		isLoading,
+	};	
+}, Chat);

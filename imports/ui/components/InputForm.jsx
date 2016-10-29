@@ -6,12 +6,13 @@ export default class InputForm extends Component {
 	createMessage(e) {
 		e.preventDefault();
 
-		let formValue = e.currentTarget.newMessage.value;
+		const form = e.currentTarget;
+		const text = form.newMessage.value;
 
-		Meteor.call('newMessage', formValue, (err) => {
+		Meteor.call('newMessage', text, (err) => {
 			if (err) console.error(err.reson);
 
-			formValue = '';
+			form.newMessage.value = '';
 		});
 	}
 

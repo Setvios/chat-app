@@ -1,24 +1,27 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 
 export default class SelectField extends Component {
 	render() {
-		const { name, optionsValue, value, onChange } = this.props;
-		
+		const {name, onChange} = this.props;
+		const optionsValue = [
+			"Select location...",
+			"London",
+			"Chicago",
+			"Boston",
+			"Madrid",
+		];
 		return (
-			<select 
+			<select
 				name={name}
-				value={value}
 				onChange={e => onChange(e.currentTarget.value)}
+				children={optionsValue.map( (item, i) => <option key={i} value={item}>{item}</option>)}
 				required
-			>
-				{optionsValue.map( (item, i) => <option key={i} value={item}>{item}</option>)}
-			</select>
+			/>
 		);
 	}
 }
 
 SelectField.propTypes = {
-	value: PropTypes.string.isRequired,
-	optionsValue: PropTypes.array.isRequired,
 	name: PropTypes.string.isRequired,
+	onChange: PropTypes.func.isRequired,
 };

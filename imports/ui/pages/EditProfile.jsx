@@ -71,7 +71,7 @@ class EditProfile extends Component {
 }
 
 EditProfile.propTypes = {
-	currentUser: PropTypes.object.isRequired,
+	currentUser: PropTypes.object,
 };
 
 export default createContainer(() => {

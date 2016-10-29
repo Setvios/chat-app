@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'react-mounter';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import App from '../imports/ui/components/App';
+import Chat from '../imports/ui/pages/Chat';
 import MainLayout from '../imports/ui/layouts/MainLayout';
 import EditProfile from '../imports/ui/pages/EditProfile';
 
@@ -12,7 +12,7 @@ FlowRouter.route('/', {
 	name: 'chat',
 	action() {
 		mount(MainLayout, {
-			content: (<App />) // TODO Stas: Chat
+			content: (<Chat />) // TODO Stas: Chat
 		});
 	}
 });

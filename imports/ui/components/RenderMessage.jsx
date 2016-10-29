@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import moment from 'moment';
 
 export default class RenderMessage extends Component {

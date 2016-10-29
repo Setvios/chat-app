@@ -1,6 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Meteor } from 'meteor/meteor';
+import React, {Component, PropTypes} from 'react';
+import {createContainer} from 'meteor/react-meteor-data';
+import {Meteor} from 'meteor/meteor';
+
 import AccountsUIWrapper from './AccountsUIWrapper';
 
 class Header extends Component {	
@@ -27,7 +28,6 @@ Header.propTypes = {
 }
 
 export default createContainer(() => {
-
 	return {
 		isUser: !!Meteor.user(),
 	 };	

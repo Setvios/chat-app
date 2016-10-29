@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Meteor } from 'meteor/meteor';
-import TextField from '../components/TextField'
+import React, {Component, PropTypes} from 'react';
+import {createContainer} from 'meteor/react-meteor-data';
+import {Meteor} from 'meteor/meteor';
+
+import TextField from '../components/TextField';
 
 class EditProfile extends Component {
 
@@ -10,9 +11,9 @@ class EditProfile extends Component {
 
 		const form = event.currentTarget;
 		
-		const newName = form.newName.value
-		const newEmail = form.newEmail.value
-		const location	= form.location.value
+		const newName = form.newName.value;
+		const newEmail = form.newEmail.value;
+		const location	= form.location.value;
 
 		Meteor.call('editUserData', newName, newEmail, location, (err) => {
 			if (err) console.error(err.reson);
@@ -26,7 +27,7 @@ class EditProfile extends Component {
 	}
 
 	render() {
-		const {currentUser} = this.props
+		const {currentUser} = this.props;
 		if (!currentUser) return null;
 		return (
 			<div className="profile-container">

@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { Messages } from '../../api/messages';
+import React, {Component} from 'react';
+import {Meteor} from 'meteor/meteor';
 
 export default class InputForm extends Component {
 
-	createMessage(event) {
-		event.preventDefault();
+	createMessage(e) {
+		e.preventDefault();
 
-		const message = event.currentTarget.newMessage.value
+		let formValue = e.currentTarget.newMessage.value;
 
-		Meteor.call('newMessage', message)
+		Meteor.call('newMessage', formValue, (err) => {
+			if (err) console.error(err.reson);
 
-		event.currentTarget.newMessage.value = '';
+			formValue = '';
+		});
 	}
 
 	render() {

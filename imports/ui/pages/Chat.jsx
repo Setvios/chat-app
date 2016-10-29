@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Meteor } from 'meteor/meteor';
-import { Messages } from '../../../imports/api/messages';
-import RenderMessage from './RenderMessage';
-import InputForm from './InputForm';
-import SelectField from './SelectField';
+import React, {Component, PropTypes} from 'react';
+import {createContainer} from 'meteor/react-meteor-data';
+import {Meteor} from 'meteor/meteor';
+
+import RenderMessage from '../components/RenderMessage';
+import InputForm from '../components/InputForm';
+import SelectField from '../components/SelectField';
+import {Messages} from '../../../imports/api/messages';
 
 class App extends Component {
 

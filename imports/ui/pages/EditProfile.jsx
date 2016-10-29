@@ -8,18 +8,21 @@ class EditProfile extends Component {
 	submitData(event) {
 		event.preventDefault();
 
-		const newName = event.currentTarget.newName.value
-		const newEmail = event.currentTarget.newEmail.value
-		const location	= event.currentTarget.location.value
+		const form = event.currentTarget;
+		
+		const newName = form.newName.value
+		const newEmail = form.newEmail.value
+		const location	= form.location.value
 
-		Meteor.call('editUserData', newName, newEmail, location)
+		Meteor.call('editUserData', newName, newEmail, location, (err) => {
+			if (err) console.error(err.reson);
 
-		event.currentTarget.newName.value = '';
-		event.currentTarget.newEmail.value = '';
-		event.currentTarget.location.value = '';
+			form.newName.value = '';
+			form.newEmail.value = '';
+			form.location.value = '';
 
-		FlowRouter.go('chat')
-
+			FlowRouter.go('chat');
+		});
 	}
 
 	render() {
@@ -67,11 +70,10 @@ class EditProfile extends Component {
 }
 
 EditProfile.propTypes = {
-	currentUser: PropTypes.object,
+	currentUser: PropTypes.object.isRequired,
 };
 
 export default createContainer(() => {
-
 	return { 
 		currentUser: Meteor.user(),
 	};

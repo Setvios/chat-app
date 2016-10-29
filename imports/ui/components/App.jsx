@@ -8,19 +8,15 @@ import SelectField from './SelectField';
 
 class App extends Component {
 
-	submitData(event) {
-		event.preventDefault();
-
-		const location	= event.currentTarget.location.value
-
-		Meteor.call('editUserLocation', location)
+	changeLocation(location) {
+		Meteor.call('editUserLocation', location);
 	}
 
 	renderMessages() {
-		const userLocation = this.props.messages.filter( message => (
+		const userLocation = this.props.messages.filter(message => (
 			message.location === this.props.currentUser.location
 		));
-		return userLocation.map( message => (
+		return userLocation.map(message => (
 			<RenderMessage 
 				key={message._id} 
 				message={message} 
@@ -44,23 +40,22 @@ class App extends Component {
 			return (
 				<div className="select-location">
 					<p>Select chatting location</p>
-					<form className="input-form" onSubmit={this.submitData.bind(this)} >
-						<SelectField
-							name="location"
-							value="London"
-							optionsValue={optionsValue}
-						/>
-						<br />
-						<button>Submit</button>
-					</form>
+					<SelectField
+						name="location"
+						value={optionsValue[0]}
+						optionsValue={optionsValue}
+						onChange={this.changeLocation.bind(this)}
+					/>
 				</div>
 			)
 		}
 
 		return (
 			<div>
+				<div className="location-wrapper">
+				<h3>current location: <b>{currentUser.location}</b></h3>
+				</div>
 				<div className="chat-container-wrapper">
-					<h3>current location: {currentUser.location}</h3>
 					<div className="chat-container">				
 						{this.renderMessages()}
 					</div>
@@ -72,9 +67,9 @@ class App extends Component {
 }
 
 App.propTypes = {
-	messages: PropTypes.array,
+	messages: PropTypes.array.isRequired,
 	currentUser: PropTypes.object,
-};
+}; 
 
 export default createContainer(() => {
 

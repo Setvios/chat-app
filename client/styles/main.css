@@ -1,7 +1,7 @@
-/* CSS declarations go here */
 body {
 	background-image: linear-gradient(to bottom, #5EA5FF, #BED1FF 100%);
 	background-attachment: fixed;
+	margin: 0;
 }
 
 .noUser {
@@ -10,7 +10,8 @@ body {
 	color: #004263;
 	text-align: center;
 	padding: 10px;
-	border-radius: 5px; 
+	border-radius: 5px;
+	margin-top: 50px;
 }
 
 .select-location {
@@ -60,7 +61,11 @@ body {
 	cursor: pointer;
 }
 
-.chat-container-wrapper h3 {
+.location-wrapper {
+	margin-bottom: 20px;
+}
+
+.location-wrapper h3 {
 	font: 14px helvetica;
 	color: #00527b;;
 	text-align: center;	
@@ -73,12 +78,8 @@ body {
 
 }
 
-.layout-container {
-	max-width: 50%;
+.content-container {
+	max-width: 768px;
+	padding: 20px 30px;
 	margin: 0 auto;
 }
-
-.content-container {
-	padding: 20px 30px;
-}
-

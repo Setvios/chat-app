@@ -1,42 +1,24 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class SelectField extends Component {
-	constructor(props) {
-		super(props)
-		
-		this.state = {
-			value: props.value,
-		};
-		this.handleOnChange = this.handleOnChange.bind(this);
-	}
-
-	handleOnChange(event){
-		this.setState({
-			value: event.currentTarget.value,
-		})
-	} 
-
 	render() {
-		const {name, optionsValue} = this.props;
-		const {value} = this.state;
+		const { name, optionsValue, value, onChange } = this.props;
+		
 		return (
 			<select 
 				name={name}
-				value={this.state.value}
-				onChange={this.handleOnChange}
+				value={value}
+				onChange={e => onChange(e.currentTarget.value)}
 				required
 			>
-				<option value={optionsValue[0]}>{optionsValue[0]}</option>
-				<option value={optionsValue[1]}>{optionsValue[1]}</option>
-				<option value={optionsValue[2]}>{optionsValue[2]}</option>
-				<option value={optionsValue[3]}>{optionsValue[3]}</option>
+				{optionsValue.map( (item, i) => <option key={i} value={item}>{item}</option>)}
 			</select>
 		);
 	}
 }
 
 SelectField.propTypes = {
-	value: PropTypes.string,
-	optionsValue: PropTypes.array,
-	name: PropTypes.string,
+	value: PropTypes.string.isRequired,
+	optionsValue: PropTypes.array.isRequired,
+	name: PropTypes.string.isRequired,
 };

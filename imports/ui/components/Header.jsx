@@ -23,7 +23,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-	isUser: PropTypes.bool,
+	isUser: PropTypes.bool.isRequired,
 }
 
 export default createContainer(() => {

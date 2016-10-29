@@ -20,5 +20,5 @@ export default class RenderMessage extends Component {
 }
 
 RenderMessage.propTypes = {
-	message: PropTypes.object,
+	message: PropTypes.object.isRequired,
 };

@@ -13,7 +13,7 @@ class EditProfile extends Component {
 		
 		const newName = form.newName.value;
 		const newEmail = form.newEmail.value;
-		const location	= form.location.value;
+		const location = form.location.value;
 
 		Meteor.call('editUserData', newName, newEmail, location, (err) => {
 			if (err) console.error(err.reson);

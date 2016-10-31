@@ -5,7 +5,6 @@ import {Meteor} from 'meteor/meteor';
 import RenderMessage from '../components/RenderMessage';
 import InputForm from '../components/InputForm';
 import SelectField from '../components/SelectField';
-import {Messages} from '../../../imports/api/messages';
 
 class Chat extends Component {
 
@@ -15,9 +14,9 @@ class Chat extends Component {
 
 	renderMessages() {
 		return this.props.messages.map(message => (
-			<RenderMessage 
-				key={message._id} 
-				message={message} 
+			<RenderMessage
+				key={message._id}
+				message={message}
 			/>
 		));
 	}
@@ -30,7 +29,7 @@ class Chat extends Component {
 		if (!currentUser) {
 			return <p className="noUser">Please sign in and select location to start chatting</p>;
 		}
-		if (!currentUser.location) {		
+		if (!currentUser.location) {
 			return (
 				<div className="select-location">
 					<p>Select chatting location</p>
@@ -39,7 +38,7 @@ class Chat extends Component {
 						onChange={this.changeLocation.bind(this)}
 					/>
 				</div>
-			)
+			);
 		}
 
 		return (
@@ -48,7 +47,7 @@ class Chat extends Component {
 				<h3>current location: <b>{currentUser.location}</b></h3>
 				</div>
 				<div className="chat-container-wrapper">
-					<div className="chat-container">				
+					<div className="chat-container">
 						{this.renderMessages()}
 					</div>
 				</div>
@@ -69,10 +68,10 @@ export default createContainer(() => {
 	if (Meteor.subscribe('userData').ready()) {
 		isLoading = false;
 	}
-	
+
 	return {
 		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
 		currentUser: Meteor.user(),
 		isLoading,
-	};	
+	};
 }, Chat);

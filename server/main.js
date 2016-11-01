@@ -5,9 +5,13 @@ import '../imports/api/server/userMethods';
 
 Meteor.publish('messages', function(){
 	const currentUser = Meteor.users.findOne(this.userId);
-	return Messages.find({ location: currentUser.location});
+	return Messages.find({ location: currentUser.location });
 });
 
 Meteor.publish('userData', function(){
-	return Meteor.users.find({_id: this.userId});
+	return Meteor.users.find({ _id: this.userId });
+});
+
+Meteor.publish("userStatus", function() {
+	return Meteor.users.find({ "status.online": true });
 });

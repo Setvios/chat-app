@@ -1,14 +1,20 @@
 import React, {Component, PropTypes} from 'react';
-import moment from 'moment';
 
 export default class RenderMessage extends Component {
 
 	render() {
-		const {message} = this.props;
+		const {message, usersOnline} = this.props;
+		const isAuthorOnline = usersOnline.find(
+			user => user._id === message.userId && user.username === message.username
+		);
 		return (
 			<div className="message-container">
 				<div className="username-wrap">
 					{message.username}:
+					<br />
+					{ isAuthorOnline ?
+						<p>online</p> : <p className="offline">offline</p>
+					}
 				</div>
 				<div className="text-container">
 					{message.text}
@@ -21,4 +27,5 @@ export default class RenderMessage extends Component {
 
 RenderMessage.propTypes = {
 	message: PropTypes.object.isRequired,
+	usersOnline: PropTypes.array.isRequired,
 };

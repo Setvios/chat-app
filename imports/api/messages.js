@@ -18,6 +18,7 @@ Meteor.methods({
 			createdAt: new Date(),
 			timestamp: moment().format('ddd HH:mm'),
 			username: Meteor.users.findOne(this.userId).username,
+			userId: this.userId,
 			location: Meteor.users.findOne(this.userId).location,
 		});
 	},

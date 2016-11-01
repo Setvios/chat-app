@@ -5,6 +5,7 @@ import {Meteor} from 'meteor/meteor';
 import RenderMessage from '../components/RenderMessage';
 import InputForm from '../components/InputForm';
 import SelectField from '../components/SelectField';
+import {Messages} from '../../../imports/api/messages';
 
 class Chat extends Component {
 
@@ -13,16 +14,19 @@ class Chat extends Component {
 	}
 
 	renderMessages() {
-		return this.props.messages.map(message => (
+		const {messages, currentUser, usersOnline} = this.props;
+		return messages.map(message => (
 			<RenderMessage
 				key={message._id}
 				message={message}
+				currentUser={currentUser}
+				usersOnline={usersOnline}
 			/>
 		));
 	}
 
 	render() {
-		const { currentUser, isLoading } = this.props;
+		const {currentUser, isLoading} = this.props;
 		if (isLoading) {
 			return <p className="noUser">Loading...</p>;
 		}
@@ -40,7 +44,6 @@ class Chat extends Component {
 				</div>
 			);
 		}
-
 		return (
 			<div>
 				<div className="location-wrapper">
@@ -65,12 +68,14 @@ Chat.propTypes = {
 export default createContainer(() => {
 	let isLoading = true;
 	Meteor.subscribe('messages');
+	Meteor.subscribe('userStatus');
 	if (Meteor.subscribe('userData').ready()) {
 		isLoading = false;
 	}
 
 	return {
 		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
+		usersOnline: Meteor.users.find({ "status.online": true }).fetch(),
 		currentUser: Meteor.user(),
 		isLoading,
 	};

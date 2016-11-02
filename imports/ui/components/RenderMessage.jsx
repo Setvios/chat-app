@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import classnames from 'classnames';
 
 export default class RenderMessage extends Component {
 
@@ -7,14 +8,18 @@ export default class RenderMessage extends Component {
 		const isAuthorOnline = usersOnline.find(
 			user => user._id === message.userId && user.username === message.username
 		);
+		const isAuthorOnlineClass = classnames(
+			'username-wrap',
+			{'authorOffline': !isAuthorOnline,
+			'authorOnline': isAuthorOnline,
+			}
+		);
 		return (
 			<div className="message-container">
-				<div className="username-wrap">
+				<div className={isAuthorOnlineClass}>
 					{message.username}:
 					<br />
-					{ isAuthorOnline ?
-						<p>online</p> : <p className="offline">offline</p>
-					}
+					{ isAuthorOnline ? <p>online</p> : <p className="offline">offline</p> }
 				</div>
 				<div className="text-container">
 					{message.text}

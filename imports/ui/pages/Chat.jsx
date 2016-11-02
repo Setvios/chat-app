@@ -74,7 +74,7 @@ export default createContainer(() => {
 	}
 
 	return {
-		messages: Messages.find({}, { sort: { createdAt: -1 } }).fetch(),
+		messages: Messages.find({}, { sort: { createdAt: 1 } }).fetch(),
 		usersOnline: Meteor.users.find({ "status.online": true }).fetch(),
 		currentUser: Meteor.user(),
 		isLoading,

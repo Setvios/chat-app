@@ -19,7 +19,7 @@ export default class RenderMessage extends Component {
 				<div className={isAuthorOnlineClass}>
 					{message.username}:
 					<br />
-					{ isAuthorOnline ? <p>online</p> : <p className="offline">offline</p> }
+					{ isAuthorOnline ? <p className="p-online">online</p> : <p className="p-offline">offline</p> }
 				</div>
 				<div className="text-container">
 					{message.text}

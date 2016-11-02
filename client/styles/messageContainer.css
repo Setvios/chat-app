@@ -3,12 +3,11 @@
 	margin: 5px 0;	
 }
 
-.authorOffline {
+.username-wrap {
 	font: 12px sans-serif;
 	font-weight: bold;
 	float: left;
 	color: #004263;
-	border: 1px solid #bdd1ff;
 	border-radius: 20px;
 	margin-right: -1px;
 	min-width: 40px;
@@ -16,31 +15,26 @@
 	text-align: center;
 }
 
-.authorOnline {
-	font: 12px sans-serif;
-	font-weight: bold;
-	float: left;
-	color: #004263;
+.username-wrap.authorOffline {
+	border: 1px solid #bdd1ff;
+}
+
+.username-wrap.authorOnline {
 	border: 1px solid #0ca200;
-	border-radius: 20px;
-	margin-right: -1px;
-	min-width: 40px;
-	padding: 7px;
-	text-align: center;
 }
 
 .username-wrap p {
 	margin: 0;
 	font: 9px sans-serif;
-	color: #0ca200;
 	text-align: right;
 }
 
-.username-wrap .offline {
-	margin: 0;
-	font: 9px sans-serif;
+.username-wrap .p-online {
+	color: #0ca200;
+}
+
+.username-wrap .p-offline {
 	color: #bdd1ff;
-	text-align: right;
 }
 
 .text-container {

@@ -9,6 +9,20 @@ import {Messages} from '../../../imports/api/messages';
 
 class Chat extends Component {
 
+	componentDidMount() {
+		this.scrollToLastMessage();
+	}
+
+	componentDidUpdate() {
+		this.scrollToLastMessage();
+	}
+
+	scrollToLastMessage() {
+		const container = $('.chat-container-wrapper');
+		const messagesHeight = $('.chat-container').height();
+		container.scrollTop(messagesHeight);
+	}
+
 	changeLocation(location) {
 		Meteor.call('editUserLocation', location);
 	}

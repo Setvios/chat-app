@@ -3,9 +3,13 @@ import {Meteor} from 'meteor/meteor';
 import {Messages} from '../imports/api/messages';
 import '../imports/api/server/userMethods';
 
-Meteor.publish('messages', function(){
+Meteor.publish('messages', function(limit){
 	const currentUser = Meteor.users.findOne(this.userId);
-	return Messages.find({ location: currentUser.location });
+	const defaultLimit = limit || 15;
+	return Messages.find(
+		{ location: currentUser.location },
+		{ sort: {createdAt: -1}, limit: defaultLimit }
+	);
 });
 
 Meteor.publish('userData', function(){

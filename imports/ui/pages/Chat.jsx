@@ -8,6 +8,13 @@ import SelectField from '../components/SelectField';
 import {Messages} from '../../../imports/api/messages';
 
 class Chat extends Component {
+	constructor(props){
+		super(props)
+
+		this.state = {
+			loadedMessages: 15
+		}
+	}
 
 	componentDidMount() {
 		this.scrollToLastMessage();
@@ -39,6 +46,12 @@ class Chat extends Component {
 		));
 	}
 
+	loadMoreMessages(){
+		const loadedMessages = this.state.loadedMessages + 15;
+		Meteor.subscribe('messages', loadedMessages);
+		this.setState({loadedMessages})
+	}
+
 	render() {
 		const {currentUser, isLoading} = this.props;
 		if (isLoading) {
@@ -64,6 +77,7 @@ class Chat extends Component {
 				<h3>current location: <b>{currentUser.location}</b></h3>
 				</div>
 				<div className="chat-container-wrapper">
+					<button onClick={this.loadMoreMessages.bind(this)}>show previous messages</button>
 					<div className="chat-container">
 						{this.renderMessages()}
 					</div>
@@ -77,6 +91,8 @@ class Chat extends Component {
 Chat.propTypes = {
 	messages: PropTypes.array.isRequired,
 	currentUser: PropTypes.object,
+	usersOnline: PropTypes.array,
+	isLoading: PropTypes.bool,
 }; 
 
 export default createContainer(() => {

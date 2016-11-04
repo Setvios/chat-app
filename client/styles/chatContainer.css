@@ -9,6 +9,26 @@
 	overflow-x: hidden;
 }
 
+.chat-container-wrapper button {
+	width: 25%;
+	background: #ededed;
+	border: none;
+	font: 10px Verdana;
+	color: #004263;
+	border-radius: 2px;
+	margin: 0 auto;
+	margin-bottom: 12px;
+	padding: 3px;
+	outline: 0;
+	display: block;
+	transition: all 0.3s;
+}
+
+.chat-container-wrapper button:hover {
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
 .chat-container-wrapper::-webkit-scrollbar {
 	width: 8px;
 }
